@@ -1,0 +1,40 @@
+.title {
+    margin: 20px;
+}
+
+.result {
+    margin: 10px 20px;
+}
+
+.input {
+    margin: 0 20px;
+    width: 200px;
+}
+
+.btn-container {
+    padding: 3px;
+    margin: 10px 20px;
+    display: grid;
+    width: 200px;
+    height: 200px;
+    grid-template-columns: auto auto auto auto;
+}
+
+#ac {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+#equals {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+#num0 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.btn {
+    cursor: pointer;
+}
