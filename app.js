@@ -52,5 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   num9.addEventListener("click", () => {
     input.value += 9;
   });
-  
+  dot.addEventListener("click", () => {
+    input.value += ".";
+  });
 });
