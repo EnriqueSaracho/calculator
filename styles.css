@@ -1,3 +1,12 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-body {
+    display: flex;
+}
+
 .title {
     margin: 20px;
 }
@@ -9,6 +18,7 @@
 .input {
     margin: 0 20px;
     width: 200px;
+    text-align: right;
 }
 
 .btn-container {
@@ -20,7 +30,7 @@
     grid-template-columns: auto auto auto auto;
 }
 
-#ac {
+#clear {
     grid-column-start: 1;
     grid-column-end: 5;
 }
@@ -37,4 +47,10 @@
 
 .btn {
     cursor: pointer;
+}
+
+.log {
+    border: solid;
+    width: 380px;
+    height: 500px;
 }

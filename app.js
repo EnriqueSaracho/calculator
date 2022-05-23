@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const title = document.getElementById("title");
   const input = document.getElementById("input");
-  const ac = document.getElementById("ac");
+  const clear = document.getElementById("clear");
   const equals = document.getElementById("equals");
   const division = document.getElementById("division");
   const multiplication = document.getElementById("multiplication");
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const num8 = document.getElementById("num8");
   const num9 = document.getElementById("num9");
 
-  ac.addEventListener("click", () => {
+  clear.addEventListener("click", () => {
     input.value = null;
   });
   num0.addEventListener("click", () => {
@@ -51,8 +51,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   num9.addEventListener("click", () => {
     input.value += 9;
-  });
-  dot.addEventListener("click", () => {
-    input.value += ".";
   });
 });
