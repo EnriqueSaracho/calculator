@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Variables (calculator buttons and input values):
   const input = document.getElementById("input");
   const clear = document.getElementById("clear");
   const equals = document.getElementById("equals");
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let x = "";
   let y = "";
 
+  // Buttons:
   clear.addEventListener("click", () => {
     input.textContent = null;
   });
@@ -55,10 +57,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   dot.addEventListener("click", () => {
     input.textContent += ".";
-    dot.disabled = true;
+    // dot.disabled = true;
   });
   addition.addEventListener("click", () => {
-    input.textContent += " + ";
-    addition.disabled = true;
+    valueOne();
+    // input.textContent += " + ";
+    // addition.disabled = true;
   });
+  subtraction.addEventListener("click", () => {
+    input.textContent += " - ";
+    // subtraction.disabled = true;
+  });
+  multiplication.addEventListener("click", () => {
+    input.textContent += " * ";
+    // multiplication.disabled = true;
+  });
+  division.addEventListener("click", () => {
+    input.textContent += " / ";
+    // division.disabled = true;
+  });
+  equals.addEventListener("click", () => {
+    input.textContent += " = ";
+    // equals.disabled = true;
+  });
+
+  function valueOne() {
+    x = input.textContent;
+    input.textContent = "";
+    console.log(x);
+  }
+  
 });
