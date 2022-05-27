@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const num7 = document.getElementById("num7");
   const num8 = document.getElementById("num8");
   const num9 = document.getElementById("num9");
+  let x = "";
+  let y = "";
 
   clear.addEventListener("click", () => {
     input.textContent = null;
