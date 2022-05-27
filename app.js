@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const title = document.getElementById("title");
   const input = document.getElementById("input");
   const clear = document.getElementById("clear");
   const equals = document.getElementById("equals");
@@ -18,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const num7 = document.getElementById("num7");
   const num8 = document.getElementById("num8");
   const num9 = document.getElementById("num9");
+
+  input.value = "";
 
   clear.addEventListener("click", () => {
     input.value = null;
@@ -51,5 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   num9.addEventListener("click", () => {
     input.value += 9;
+  });
+  dot.addEventListener("click", () => {
+    input.value += ".";
+    dot.disabled = true;
+  });
+  addition.addEventListener("click", () => {
+    input.value += " + ";
+    addition.disabled = true;
   });
 });

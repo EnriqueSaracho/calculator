@@ -11,10 +11,6 @@ body {
     margin: 20px;
 }
 
-.result {
-    margin: 10px 20px;
-}
-
 .input {
     margin: 0 20px;
     width: 200px;
@@ -53,4 +49,5 @@ body {
     border: solid;
     width: 380px;
     height: 500px;
+    text-align: right;
 }
