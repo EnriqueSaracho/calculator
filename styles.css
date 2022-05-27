@@ -14,6 +14,8 @@ body {
 .input {
     margin: 0 20px;
     width: 200px;
+    height: 20px;
+    background-color: silver;
     text-align: right;
 }
 

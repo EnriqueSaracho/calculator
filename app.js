@@ -18,47 +18,45 @@ document.addEventListener("DOMContentLoaded", () => {
   const num8 = document.getElementById("num8");
   const num9 = document.getElementById("num9");
 
-  input.value = "";
-
   clear.addEventListener("click", () => {
-    input.value = null;
+    input.textContent = null;
   });
   num0.addEventListener("click", () => {
-    input.value += 0;
+    input.textContent += 0;
   });
   num1.addEventListener("click", () => {
-    input.value += 1;
+    input.textContent += 1;
   });
   num2.addEventListener("click", () => {
-    input.value += 2;
+    input.textContent += 2;
   });
   num3.addEventListener("click", () => {
-    input.value += 3;
+    input.textContent += 3;
   });
   num4.addEventListener("click", () => {
-    input.value += 4;
+    input.textContent += 4;
   });
   num5.addEventListener("click", () => {
-    input.value += 5;
+    input.textContent += 5;
   });
   num6.addEventListener("click", () => {
-    input.value += 6;
+    input.textContent += 6;
   });
   num7.addEventListener("click", () => {
-    input.value += 7;
+    input.textContent += 7;
   });
   num8.addEventListener("click", () => {
-    input.value += 8;
+    input.textContent += 8;
   });
   num9.addEventListener("click", () => {
-    input.value += 9;
+    input.textContent += 9;
   });
   dot.addEventListener("click", () => {
-    input.value += ".";
+    input.textContent += ".";
     dot.disabled = true;
   });
   addition.addEventListener("click", () => {
-    input.value += " + ";
+    input.textContent += " + ";
     addition.disabled = true;
   });
 });
