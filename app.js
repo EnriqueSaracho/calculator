@@ -18,8 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const num7 = document.getElementById("num7");
   const num8 = document.getElementById("num8");
   const num9 = document.getElementById("num9");
-  let x = "";
-  let y = "";
+  let x = 0;
+  let y = 0;
+  let operator = "";
 
   // Buttons:
   clear.addEventListener("click", () => {
@@ -60,31 +61,58 @@ document.addEventListener("DOMContentLoaded", () => {
     // dot.disabled = true;
   });
   addition.addEventListener("click", () => {
-    valueOne();
+    xValue();
+    operator = "addition";
     // input.textContent += " + ";
     // addition.disabled = true;
   });
   subtraction.addEventListener("click", () => {
-    input.textContent += " - ";
+    xValue();
+    operator = "subtraction";
+    // input.textContent += " - ";
     // subtraction.disabled = true;
   });
   multiplication.addEventListener("click", () => {
-    input.textContent += " * ";
+    xValue();
+    operator = "multiplication";
+    // input.textContent += " * ";
     // multiplication.disabled = true;
   });
   division.addEventListener("click", () => {
-    input.textContent += " / ";
+    xValue();
+    operator = "division";
+    // input.textContent += " / ";
     // division.disabled = true;
   });
   equals.addEventListener("click", () => {
-    input.textContent += " = ";
+    yValue();
+    // input.textContent += " = ";
     // equals.disabled = true;
   });
 
-  function valueOne() {
-    x = input.textContent;
+  // Function: declares "x" value.
+  function xValue() {
+    x = Number(input.textContent);
     input.textContent = "";
     console.log(x);
   }
-  
+  // Function: declares "y" value and runs operation.
+  function yValue() {
+    y = Number(input.textContent);
+    switch (operator) {
+      case "addition":
+        input.textContent = x + y;
+        break;
+      case "subtraction":
+        input.textContent = x - y;
+        break;
+      case "multiplication":
+        input.textContent = x * y;
+        break;
+      case "division":
+        input.textContent = x / y;
+        break;
+    }
+    console.log(y);
+  }
 });
