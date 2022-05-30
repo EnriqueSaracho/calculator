@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const num7 = document.getElementById("num7");
   const num8 = document.getElementById("num8");
   const num9 = document.getElementById("num9");
-  let x = 0;
-  let y = 0;
+  let x = null;
+  let y = null;
   let operator = "";
 
   // Buttons:
