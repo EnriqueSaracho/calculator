@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Buttons:
   clear.addEventListener("click", () => {
     input.textContent = null;
+    x = null;
+    y = null;
+    dot.disabled = false;
   });
   num0.addEventListener("click", () => {
     input.textContent += 0;
@@ -58,36 +61,47 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   dot.addEventListener("click", () => {
     input.textContent += ".";
-    // dot.disabled = true;
+    dot.disabled = true;
   });
   addition.addEventListener("click", () => {
-    xValue();
+    if (operator == "") {
+      xValue();
+    } else {
+      xValueOperator();
+    }
     operator = "addition";
-    // input.textContent += " + ";
-    // addition.disabled = true;
+    dot.disabled = false;
   });
   subtraction.addEventListener("click", () => {
-    xValue();
+    if (operator == "") {
+      xValue();
+    } else {
+      xValueOperator();
+    }
     operator = "subtraction";
-    // input.textContent += " - ";
-    // subtraction.disabled = true;
+    dot.disabled = false;
   });
   multiplication.addEventListener("click", () => {
-    xValue();
+    if (operator == "") {
+      xValue();
+    } else {
+      xValueOperator();
+    }
     operator = "multiplication";
-    // input.textContent += " * ";
-    // multiplication.disabled = true;
+    dot.disabled = false;
   });
   division.addEventListener("click", () => {
-    xValue();
+    if (operator == "") {
+      xValue();
+    } else {
+      xValueOperator();
+    }
     operator = "division";
-    // input.textContent += " / ";
-    // division.disabled = true;
+    dot.disabled = false;
   });
   equals.addEventListener("click", () => {
     yValue();
-    // input.textContent += " = ";
-    // equals.disabled = true;
+    dot.disabled = false;
   });
 
   // Function: declares "x" value.
@@ -113,6 +127,27 @@ document.addEventListener("DOMContentLoaded", () => {
         input.textContent = x / y;
         break;
     }
+    operator = "";
     console.log(y);
+  }
+  // Function: declares "x" when an operator is in use
+  function xValueOperator() {
+    y = Number(input.textContent);
+    switch (operator) {
+      case "addition":
+        x = x + y;
+        break;
+      case "subtraction":
+        x = x - y;
+        break;
+      case "multiplication":
+        x = x * y;
+        break;
+      case "division":
+        x = x / y;
+        break;
+    }
+    input.textContent = "";
+    console.log(x);
   }
 });
