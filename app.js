@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Variables (calculator buttons and input values):
+  const operatorDisplay = document.getElementById("operator-display");
   const input = document.getElementById("input");
   const clear = document.getElementById("clear");
   const equals = document.getElementById("equals");
@@ -71,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     operator = "addition";
     dot.disabled = false;
+    operatorDisplay.textContent = "+";
   });
   subtraction.addEventListener("click", () => {
     if (operator == "") {
@@ -80,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     operator = "subtraction";
     dot.disabled = false;
+    operatorDisplay.textContent = "-";
   });
   multiplication.addEventListener("click", () => {
     if (operator == "") {
@@ -89,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     operator = "multiplication";
     dot.disabled = false;
+    operatorDisplay.textContent = "*";
   });
   division.addEventListener("click", () => {
     if (operator == "") {
@@ -98,10 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     operator = "division";
     dot.disabled = false;
+    operatorDisplay.textContent = "/";
   });
   equals.addEventListener("click", () => {
     yValue();
     dot.disabled = false;
+    operatorDisplay.textContent = "";
   });
 
   // Function: declares "x" value.
