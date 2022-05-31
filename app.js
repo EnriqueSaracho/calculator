@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Buttons:
   clear.addEventListener("click", () => {
     input.textContent = null;
+    operator = "";
     x = null;
     y = null;
     dot.disabled = false;
