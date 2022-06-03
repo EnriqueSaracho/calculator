@@ -157,4 +157,60 @@ document.addEventListener("DOMContentLoaded", () => {
     input.textContent = "";
     console.log(x);
   }
+
+  // Event listener: adds keyboard functionality
+  document.addEventListener("keydown", (event) => {
+    switch (event.key) {
+      case "0":
+        num0.click();
+        break;
+      case "1":
+        num1.click();
+        break;
+      case "2":
+        num2.click();
+        break;
+      case "3":
+        num3.click();
+        break;
+      case "4":
+        num4.click();
+        break;
+      case "5":
+        num5.click();
+        break;
+      case "6":
+        num6.click();
+        break;
+      case "7":
+        num7.click();
+        break;
+      case "8":
+        num8.click();
+        break;
+      case "9":
+        num9.click();
+        break;
+      case ".":
+        dot.click();
+        break;
+      case "+":
+        addition.click();
+        break;
+      case "-":
+        subtraction.click();
+        break;
+      case "*":
+        multiplication.click();
+        break;
+      case "/":
+        division.click();
+        break;
+      case "Enter":
+        equals.click();
+        break;
+      default:
+        break;
+    }
+  });
 });
