@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const operatorDisplay = document.getElementById("operator-display");
   const input = document.getElementById("input");
   const clear = document.getElementById("clear");
+  const del = document.getElementById("del");
   const equals = document.getElementById("equals");
   const division = document.getElementById("division");
   const multiplication = document.getElementById("multiplication");
@@ -30,6 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
     x = null;
     y = null;
     dot.disabled = false;
+  });
+  del.addEventListener("click", () => {
+    let array = input.textContent;
+    input.textContent = null;
+    for (let i = 0; i < array.length - 1; i++) {
+      input.textContent += array[i];
+    }
   });
   num0.addEventListener("click", () => {
     input.textContent += 0;
@@ -208,6 +216,9 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
       case "Enter":
         equals.click();
+        break;
+      case "Backspace":
+        del.click();
         break;
       default:
         break;
