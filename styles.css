@@ -1,81 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;400;700&display=swap");
 
 body {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Noto Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .app-body {
-    display: flex;
+  display: flex;
 }
 
 .title {
-    margin: 20px;
+  margin: 20px;
+}
+
+.calculator {
+  background-color: #efefef;
+  width: 300px;
+  height: 450px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: #929292 2px 2px 2px;
 }
 
 .operator-display {
-    margin: 5px 20px;
-    width: 350px;
-    height: 50px;
-    text-align: right;
-    font-size: 40px;
+  margin: 0 0 10px 0;
+  padding: 0 10px;
+  width: auto;
+  height: 35px;
+  text-align: right;
+  font-size: 25px;
+  background-color: rgb(215, 215, 215);
 }
 
 .input {
-    margin: 0 20px;
-    width: 350px;
-    height: 50px;
-    background-color: silver;
-    text-align: right;
-    font-size: 40px;
-    font-weight: 400;
+  margin: 0;
+  padding: 0 10px;
+  width: auto;
+  height: 50px;
+  background-color: white;
+  text-align: right;
+  font-size: 35px;
+  font-weight: 400;
 }
 
 .btn-container {
-    padding: 3px;
-    margin: 10px 20px;
-    display: grid;
-    width: 200px;
-    height: 200px;
-    grid-template-columns: repeat(4, minmax(0, 1fr))
+  margin: 10px 2px;
+  padding: 0px;
+  display: grid;
+  width: auto;
+  height: 325px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 #clear {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    font-family: inherit;
-    font-weight: 100;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  font-family: inherit;
+  font-weight: 100;
 }
 
 #del {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    font-family: inherit;
-    font-weight: 100;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  font-family: inherit;
+  font-weight: 100;
 }
 
 #num7 {
-    grid-column-start: 1;
+  grid-column-start: 1;
 }
 
 .btn-num {
-    font-family: inherit;
-    font-weight: 700;
-}
-
-.btn-font {
-    font-family: inherit;
-    font-weight: 100;
+  font-family: inherit;
+  font-weight: 700;
 }
 
 .btn {
-    cursor: pointer;
+  cursor: pointer;
+  border: 0;
+  background-color: white;
+  font-size: 25px;
+  margin: 1px;
+  border-radius: 1px;
+}
+.btn:hover {
+  background-color: rgb(212, 212, 212);
+}
+.btn:active {
+  background-color: rgb(174, 174, 174);
+}
+
+.btn-font {
+  font-family: inherit;
+  font-size: 20px;
 }
 
 .log {
-    border: solid;
-    width: 380px;
-    height: 500px;
-    text-align: right;
+  border: solid;
+  width: 380px;
+  height: 500px;
+  text-align: right;
 }
