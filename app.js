@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   clear.addEventListener("click", () => {
     input.textContent = null;
     operator = "";
+    operatorDisplay.textContent = "";
     x = null;
     y = null;
     dot.disabled = false;
@@ -168,6 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Event listener: adds keyboard functionality
   document.addEventListener("keydown", (event) => {
+    event.preventDefault();
     switch (event.key) {
       case "0":
         num0.click();
@@ -219,6 +221,9 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
       case "Backspace":
         del.click();
+        break;
+      case "Escape":
+        clear.click();
         break;
       default:
         break;
