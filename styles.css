@@ -32,22 +32,21 @@ body {
     display: grid;
     width: 200px;
     height: 200px;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr))
 }
 
 #clear {
     grid-column-start: 1;
-    grid-column-end: 5;
+    grid-column-end: 2;
 }
 
-#equals {
-    grid-column-start: 1;
-    grid-column-end: 5;
-}
-
-#num0 {
-    grid-column-start: 1;
+#del {
+    grid-column-start: 2;
     grid-column-end: 3;
+}
+
+#num7 {
+    grid-column-start: 1;
 }
 
 .btn {
