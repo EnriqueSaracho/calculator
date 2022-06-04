@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     operator = "multiplication";
     dot.disabled = false;
-    operatorDisplay.textContent = "*";
+    operatorDisplay.textContent = "x";
   });
   division.addEventListener("click", () => {
     if (operator == "") {
@@ -112,12 +112,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     operator = "division";
     dot.disabled = false;
-    operatorDisplay.textContent = "/";
+    operatorDisplay.textContent = "÷";
   });
   equals.addEventListener("click", () => {
     yValue();
     dot.disabled = false;
-    operatorDisplay.textContent = "";
+    operatorDisplay.textContent = "=";
   });
 
   // Function: declares "x" value.
@@ -164,7 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
     }
     input.textContent = "";
-    console.log(x);
   }
 
   // Event listener: adds keyboard functionality

@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;400;700&display=swap');
+
 body {
     display: flex;
     flex-direction: column;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .app-body {
@@ -13,17 +16,20 @@ body {
 
 .operator-display {
     margin: 5px 20px;
-    width: 200px;
-    height: 20px;
+    width: 350px;
+    height: 50px;
     text-align: right;
+    font-size: 40px;
 }
 
 .input {
     margin: 0 20px;
-    width: 200px;
-    height: 20px;
+    width: 350px;
+    height: 50px;
     background-color: silver;
     text-align: right;
+    font-size: 40px;
+    font-weight: 400;
 }
 
 .btn-container {
@@ -38,15 +44,29 @@ body {
 #clear {
     grid-column-start: 1;
     grid-column-end: 2;
+    font-family: inherit;
+    font-weight: 100;
 }
 
 #del {
     grid-column-start: 2;
     grid-column-end: 3;
+    font-family: inherit;
+    font-weight: 100;
 }
 
 #num7 {
     grid-column-start: 1;
+}
+
+.btn-num {
+    font-family: inherit;
+    font-weight: 700;
+}
+
+.btn-font {
+    font-family: inherit;
+    font-weight: 100;
 }
 
 .btn {
