@@ -228,4 +228,8 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
     }
   });
+
+  // limit number of digits in input
+  
+  // play around with text area
 });
