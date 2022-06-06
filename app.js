@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Variables (calculator buttons and input values):
+  const calculator = document.getElementById('calculator')
   const operatorDisplay = document.getElementById("operator-display");
   const input = document.getElementById("input");
   const clear = document.getElementById("clear");
@@ -167,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Event listener: adds keyboard functionality
-  document.addEventListener("keydown", (event) => {
+  calculator.addEventListener("keydown", (event) => {
     event.preventDefault();
     switch (event.key) {
       case "0":
@@ -228,5 +229,5 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
     }
   });
-  
+
 });

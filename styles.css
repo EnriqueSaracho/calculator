@@ -58,15 +58,16 @@ body {
 #clear {
   grid-column-start: 1;
   grid-column-end: 2;
-  font-family: inherit;
-  font-weight: 100;
 }
 
 #del {
   grid-column-start: 2;
   grid-column-end: 3;
-  font-family: inherit;
-  font-weight: 100;
+}
+
+#select {
+  grid-column-start: 3;
+  grid-column-end: 5;
 }
 
 #num7 {
@@ -93,9 +94,14 @@ body {
   background-color: rgb(174, 174, 174);
 }
 
-.btn-font {
+.btn-text {
   font-family: inherit;
+  font-weight: 100;
   font-size: 20px;
+}
+
+.btn-operator {
+  font-weight: 400;
 }
 
 .log {
