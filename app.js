@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let y = null;
   let operator = "";
 
-  // Buttons:
+  // Buttons: Clear and Delete.
   clear.addEventListener("click", () => {
     input.textContent = null;
     operator = "";
@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
       input.textContent += array[i];
     }
   });
+
+  // Buttons: Numbers and dot.
   num0.addEventListener("click", () => {
     input.textContent += 0;
   });
@@ -75,6 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
     input.textContent += ".";
     dot.disabled = true;
   });
+
+  // Buttons: Operators and equals.
   addition.addEventListener("click", () => {
     if (operator == "") {
       xValue();
