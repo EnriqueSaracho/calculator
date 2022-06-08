@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Variables (calculator buttons and input values):
-  const calculator = document.getElementById('calculator')
+  const calculator = document.getElementById("calculator");
   const operatorDisplay = document.getElementById("operator-display");
   const input = document.getElementById("input");
   const clear = document.getElementById("clear");
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let x = null;
   let y = null;
   let operator = "";
+  const log = document.getElementById("log");
 
   // Buttons: Clear and Delete.
   clear.addEventListener("click", () => {
@@ -121,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   equals.addEventListener("click", () => {
     yValue();
+    addLog();
     dot.disabled = false;
     operatorDisplay.textContent = "=";
   });
@@ -233,4 +235,33 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
     }
   });
+
+  // Experimentation: textarea
+  function addLog() {
+    const li = document.createElement("li");
+    log.append(li);
+
+    let textX = document.createElement("textarea");
+    textX.setAttribute("class", "text");
+    li.append(textX);
+
+    let textOperator = document.createElement("textarea");
+    textOperator.setAttribute("class", "text-operator");
+    li.append(textOperator);
+
+    let textY = document.createElement("textarea");
+    textY.setAttribute("class", "text");
+    li.append(textY);
+
+    let h3EqualsSign = document.createElement("h3");
+    h3EqualsSign.setAttribute("class", "equal-sign");
+    h3EqualsSign.textContent = "=";
+    li.append(h3EqualsSign);
+
+    let h3Equals = document.createElement("h3");
+    h3Equals.setAttribute("class", "equal-answer");
+    h3Equals.textContent = 0;
+    li.append(h3Equals);
+  }
+  // textareae.textContent = Number(textareax.textContent) + Number(textareay.textContent)
 });

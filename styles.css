@@ -32,6 +32,7 @@ body {
   text-align: right;
   font-size: 25px;
   background-color: rgb(215, 215, 215);
+  border-radius: 1px;
 }
 
 .input {
@@ -44,6 +45,7 @@ body {
   font-size: 35px;
   font-weight: 400;
   overflow: hidden;
+  border-radius: 1px;
 }
 
 .btn-container {
@@ -104,9 +106,54 @@ body {
   font-weight: 400;
 }
 
+.log-container {
+  background-color: #efefef;
+  box-shadow: #929292 2px 2px 2px;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 20px;
+  width: 322px;
+}
+
 .log {
-  border: solid;
-  width: 380px;
-  height: 200px;
-  text-align: right;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.log > li {
+  display: flex;
+}
+
+.text {
+  height: 20px;
+  width: 60px;
+  resize: none;
+  border: none;
+  margin: 5px;
+  text-align: center;
+}
+.text-operator {
+  height: 20px;
+  width: 30px;
+  resize: none;
+  border: none;
+  margin: 5px;
+  background-color: rgb(215, 215, 215);
+  text-align: center;
+}
+
+.equal-answer {
+  height: 24px;
+  width: 60px;
+  margin: 5px;
+  text-align: center;
+  overflow: hidden;
+}
+.equal-sign {
+  background-color: rgb(215, 215, 215);
+  height: 24px;
+  width: 30px;
+  margin: 5px;
+  text-align: center;
 }
