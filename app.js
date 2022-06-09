@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
     operatorDisplay.textContent = "÷";
   });
   equals.addEventListener("click", () => {
+    // !!! Fix pressing equals right after equals.
     yValue();
     dot.disabled = false;
     operatorDisplay.textContent = "=";
@@ -149,6 +150,9 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
       case "division":
         input.textContent = x / y;
+        break;
+      default:
+        input.textContent = y;
         break;
     }
     operator = "";
@@ -283,8 +287,15 @@ document.addEventListener("DOMContentLoaded", () => {
         h3Equals.textContent =
           Number(textX.textContent) / Number(textY.textContent);
         break;
+      case "=":
+        textX.textContent = "";
+        h3Equals.textContent = Number(textY.textContent);
+        break;
+      default:
+        h3Equals.textContent = Number(textY.textContent);
+        break;
     }
     li.append(h3Equals);
-    console.log(log.childNodes[0].childNodes)
+    console.log(log.childNodes[0].childNodes);
   }
 });
