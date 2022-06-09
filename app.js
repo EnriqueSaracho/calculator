@@ -122,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   equals.addEventListener("click", () => {
     yValue();
-    addLog();
     dot.disabled = false;
     operatorDisplay.textContent = "=";
   });
@@ -136,6 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function: declares "y" value and runs operation.
   function yValue() {
     y = Number(input.textContent);
+    addLog();
     switch (operator) {
       case "addition":
         input.textContent = x + y;
@@ -156,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function: declares "x" when an operator is in use
   function xValueOperator() {
     y = Number(input.textContent);
+    addLog()
     switch (operator) {
       case "addition":
         x = x + y;
@@ -171,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
     }
     input.textContent = "";
+    console.log(x, y);
   }
 
   // Event listener: adds keyboard functionality
@@ -243,14 +245,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let textX = document.createElement("textarea");
     textX.setAttribute("class", "text");
+    textX.textContent = x;
     li.append(textX);
 
     let textOperator = document.createElement("textarea");
     textOperator.setAttribute("class", "text-operator");
+    textOperator.textContent = operatorDisplay.textContent;
     li.append(textOperator);
 
     let textY = document.createElement("textarea");
     textY.setAttribute("class", "text");
+    textY.textContent = y;
     li.append(textY);
 
     let h3EqualsSign = document.createElement("h3");
@@ -260,8 +265,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let h3Equals = document.createElement("h3");
     h3Equals.setAttribute("class", "equal-answer");
-    h3Equals.textContent = 0;
+    switch (operatorDisplay.textContent) {
+      case "+":
+        h3Equals.textContent =
+          Number(textX.textContent) + Number(textY.textContent);
+        break;
+      case "-":
+        h3Equals.textContent =
+          Number(textX.textContent) - Number(textY.textContent);
+        break;
+      case "x":
+        h3Equals.textContent =
+          Number(textX.textContent) * Number(textY.textContent);
+        break;
+      case "÷":
+        h3Equals.textContent =
+          Number(textX.textContent) / Number(textY.textContent);
+        break;
+    }
     li.append(h3Equals);
   }
-  // textareae.textContent = Number(textareax.textContent) + Number(textareay.textContent)
 });
