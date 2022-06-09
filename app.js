@@ -285,5 +285,6 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
     }
     li.append(h3Equals);
+    console.log(log.childNodes[0].childNodes)
   }
 });
