@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     x = null;
     y = null;
     dot.disabled = false;
+    log.innerHTML = null;
   });
   del.addEventListener("click", () => {
     let array = input.textContent;
@@ -156,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function: declares "x" when an operator is in use
   function xValueOperator() {
     y = Number(input.textContent);
-    addLog()
+    addLog();
     switch (operator) {
       case "addition":
         x = x + y;
