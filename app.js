@@ -50,6 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   num1.addEventListener("click", () => {
     input.textContent += 1;
+    input.textContent = Number(
+      input.textContent.replace(/,/g, "")
+    ).toLocaleString();
   });
   num2.addEventListener("click", () => {
     input.textContent += 2;
@@ -243,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Experimentation: textarea
+  // Function: fills log with operations.
   function addLog() {
     const li = document.createElement("li");
     log.append(li);
