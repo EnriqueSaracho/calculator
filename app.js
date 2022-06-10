@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     operatorDisplay.textContent = "";
     x = null;
     y = null;
-    dot.disabled = false;
+    enableOnOperator();
     log.innerHTML = null;
   });
   del.addEventListener("click", () => {
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       xValueOperator();
     }
     operator = "addition";
-    dot.disabled = false;
+    enableOnOperator();
     operatorDisplay.textContent = "+";
   });
   subtraction.addEventListener("click", () => {
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
       xValueOperator();
     }
     operator = "subtraction";
-    dot.disabled = false;
+    enableOnOperator();
     operatorDisplay.textContent = "-";
   });
   multiplication.addEventListener("click", () => {
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
       xValueOperator();
     }
     operator = "multiplication";
-    dot.disabled = false;
+    enableOnOperator();
     operatorDisplay.textContent = "x";
   });
   division.addEventListener("click", () => {
@@ -150,12 +150,12 @@ document.addEventListener("DOMContentLoaded", () => {
       xValueOperator();
     }
     operator = "division";
-    dot.disabled = false;
+    enableOnOperator();
     operatorDisplay.textContent = "÷";
   });
   equals.addEventListener("click", () => {
     yValue();
-    dot.disabled = false;
+    disableOnEquals();
     operatorDisplay.textContent = "=";
   });
 
@@ -348,5 +348,39 @@ document.addEventListener("DOMContentLoaded", () => {
     ).toLocaleString();
     li.append(h3Equals);
     console.log(log.childNodes[0].childNodes);
+  }
+
+  // Function: disables buttons after pressing equals button.
+  function disableOnEquals() {
+    del.disabled = true;
+    dot.disabled = true;
+    equals.disabled = true;
+    num0.disabled = true;
+    num1.disabled = true;
+    num2.disabled = true;
+    num3.disabled = true;
+    num4.disabled = true;
+    num5.disabled = true;
+    num6.disabled = true;
+    num7.disabled = true;
+    num8.disabled = true;
+    num9.disabled = true;
+  }
+
+  // Function: enables buttons after pressing any operator.
+  function enableOnOperator() {
+    del.disabled = false;
+    dot.disabled = false;
+    equals.disabled = false;
+    num0.disabled = false;
+    num1.disabled = false;
+    num2.disabled = false;
+    num3.disabled = false;
+    num4.disabled = false;
+    num5.disabled = false;
+    num6.disabled = false;
+    num7.disabled = false;
+    num8.disabled = false;
+    num9.disabled = false;
   }
 });
