@@ -16,7 +16,8 @@ body {
 
 .calculator {
   background-color: #efefef;
-  min-width: 300px;
+  width: 320px;
+  min-width: 320px;
   height: 450px;
   margin: 20px;
   padding: 10px;
@@ -116,6 +117,7 @@ body {
   padding: 10px;
   margin: 20px;
   width: 502px;
+  min-width: 502px;
 }
 
 .log {

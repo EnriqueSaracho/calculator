@@ -44,6 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < array.length - 1; i++) {
       input.textContent += array[i];
     }
+    input.textContent = Number(
+      input.textContent.replace(/,/g, "")
+    ).toLocaleString();
   });
 
   // Buttons: Numbers and dot.
