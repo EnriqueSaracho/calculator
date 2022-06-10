@@ -95,6 +95,9 @@ body {
 .btn:active {
   background-color: rgb(174, 174, 174);
 }
+.btn:disabled {
+  background-color: #efefef;
+}
 
 .btn-text {
   font-family: inherit;

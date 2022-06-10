@@ -47,6 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Buttons: Numbers and dot.
   num0.addEventListener("click", () => {
     input.textContent += 0;
+    if (!dot.disabled) {
+      input.textContent = Number(
+        input.textContent.replace(/,/g, "")
+      ).toLocaleString();
+    }
   });
   num1.addEventListener("click", () => {
     input.textContent += 1;
@@ -56,27 +61,51 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   num2.addEventListener("click", () => {
     input.textContent += 2;
+    input.textContent = Number(
+      input.textContent.replace(/,/g, "")
+    ).toLocaleString();
   });
   num3.addEventListener("click", () => {
     input.textContent += 3;
+    input.textContent = Number(
+      input.textContent.replace(/,/g, "")
+    ).toLocaleString();
   });
   num4.addEventListener("click", () => {
     input.textContent += 4;
+    input.textContent = Number(
+      input.textContent.replace(/,/g, "")
+    ).toLocaleString();
   });
   num5.addEventListener("click", () => {
     input.textContent += 5;
+    input.textContent = Number(
+      input.textContent.replace(/,/g, "")
+    ).toLocaleString();
   });
   num6.addEventListener("click", () => {
     input.textContent += 6;
+    input.textContent = Number(
+      input.textContent.replace(/,/g, "")
+    ).toLocaleString();
   });
   num7.addEventListener("click", () => {
     input.textContent += 7;
+    input.textContent = Number(
+      input.textContent.replace(/,/g, "")
+    ).toLocaleString();
   });
   num8.addEventListener("click", () => {
     input.textContent += 8;
+    input.textContent = Number(
+      input.textContent.replace(/,/g, "")
+    ).toLocaleString();
   });
   num9.addEventListener("click", () => {
     input.textContent += 9;
+    input.textContent = Number(
+      input.textContent.replace(/,/g, "")
+    ).toLocaleString();
   });
   dot.addEventListener("click", () => {
     input.textContent += ".";
