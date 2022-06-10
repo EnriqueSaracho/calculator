@@ -16,7 +16,7 @@ body {
 
 .calculator {
   background-color: #efefef;
-  width: 300px;
+  min-width: 300px;
   height: 450px;
   margin: 20px;
   padding: 10px;
@@ -115,7 +115,7 @@ body {
   border-radius: 3px;
   padding: 10px;
   margin: 20px;
-  width: 500px;
+  width: 502px;
 }
 
 .log {
@@ -150,6 +150,18 @@ body {
   font-size: 15px;
   font-weight: 700;
 }
+.display-space {
+  height: 20px;
+  width: 30px;
+  resize: none;
+  border: none;
+  margin: 5px 5px 5px 139px;
+  background-color: rgb(215, 215, 215);
+  text-align: center;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+}
 
 .equal-answer {
   height: 24px;
@@ -164,4 +176,7 @@ body {
   width: 30px;
   margin: 5px;
   text-align: center;
+}
+.display-no {
+  display: none;
 }

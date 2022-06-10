@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Variables (calculator buttons and input values):
+  // Variables (calculator buttons, input values and other):
   const calculator = document.getElementById("calculator");
   const operatorDisplay = document.getElementById("operator-display");
   const input = document.getElementById("input");
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let y = null;
   let operator = "";
   const log = document.getElementById("log");
+  let xflag = false;
 
   // Buttons: Clear and Delete.
   clear.addEventListener("click", () => {
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     y = null;
     enableOnOperator();
     log.innerHTML = null;
+    xflag = false;
   });
   del.addEventListener("click", () => {
     let array = input.textContent;
@@ -284,27 +286,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let textX = document.createElement("textarea");
     textX.setAttribute("class", "text");
-    // Experiment
     textX.textContent = x;
     textX.textContent = Number(
       textX.textContent.replace(/,/g, "")
     ).toLocaleString();
-    //
     li.append(textX);
+    if (xflag) {
+      textX.setAttribute("class", "display-no");
+    }
 
     let textOperator = document.createElement("textarea");
     textOperator.setAttribute("class", "text-operator");
     textOperator.textContent = operatorDisplay.textContent;
     li.append(textOperator);
+    if (xflag) {
+      textOperator.setAttribute("class", "display-space");
+    }
+    xflag = true;
 
     let textY = document.createElement("textarea");
     textY.setAttribute("class", "text");
     textY.textContent = y;
-    // Experiment
     textY.textContent = Number(
       textY.textContent.replace(/,/g, "")
     ).toLocaleString();
-    //
     li.append(textY);
 
     let h3EqualsSign = document.createElement("h3");
@@ -367,7 +372,7 @@ document.addEventListener("DOMContentLoaded", () => {
     num9.disabled = true;
   }
 
-  // Function: enables buttons after pressing any operator.
+  // Function: enables buttons after pressing any operator or clear.
   function enableOnOperator() {
     del.disabled = false;
     dot.disabled = false;
