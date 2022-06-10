@@ -154,7 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
     operatorDisplay.textContent = "÷";
   });
   equals.addEventListener("click", () => {
-    // !!! Fix pressing equals right after equals.
     yValue();
     dot.disabled = false;
     operatorDisplay.textContent = "=";
@@ -162,13 +161,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function: declares "x" value.
   function xValue() {
-    x = Number(input.textContent);
+    x = Number(input.textContent.replace(/,/g, ""));
     input.textContent = "";
     console.log(x);
   }
   // Function: declares "y" value and runs operation.
   function yValue() {
-    y = Number(input.textContent);
+    y = Number(input.textContent.replace(/,/g, ""));
     addLog();
     switch (operator) {
       case "addition":
@@ -187,12 +186,15 @@ document.addEventListener("DOMContentLoaded", () => {
         input.textContent = y;
         break;
     }
+    input.textContent = Number(
+      input.textContent.replace(/,/g, "")
+    ).toLocaleString();
     operator = "";
     console.log(y);
   }
   // Function: declares "x" when an operator is in use
   function xValueOperator() {
-    y = Number(input.textContent);
+    y = Number(input.textContent.replace(/,/g, ""));
     addLog();
     switch (operator) {
       case "addition":
