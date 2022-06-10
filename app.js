@@ -284,7 +284,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let textX = document.createElement("textarea");
     textX.setAttribute("class", "text");
+    // Experiment
     textX.textContent = x;
+    textX.textContent = Number(
+      textX.textContent.replace(/,/g, "")
+    ).toLocaleString();
+    //
     li.append(textX);
 
     let textOperator = document.createElement("textarea");
@@ -295,6 +300,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let textY = document.createElement("textarea");
     textY.setAttribute("class", "text");
     textY.textContent = y;
+    // Experiment
+    textY.textContent = Number(
+      textY.textContent.replace(/,/g, "")
+    ).toLocaleString();
+    //
     li.append(textY);
 
     let h3EqualsSign = document.createElement("h3");
@@ -307,28 +317,35 @@ document.addEventListener("DOMContentLoaded", () => {
     switch (operatorDisplay.textContent) {
       case "+":
         h3Equals.textContent =
-          Number(textX.textContent) + Number(textY.textContent);
+          Number(textX.textContent.replace(/,/g, "")) +
+          Number(textY.textContent.replace(/,/g, ""));
         break;
       case "-":
         h3Equals.textContent =
-          Number(textX.textContent) - Number(textY.textContent);
+          Number(textX.textContent.replace(/,/g, "")) -
+          Number(textY.textContent.replace(/,/g, ""));
         break;
       case "x":
         h3Equals.textContent =
-          Number(textX.textContent) * Number(textY.textContent);
+          Number(textX.textContent.replace(/,/g, "")) *
+          Number(textY.textContent.replace(/,/g, ""));
         break;
       case "÷":
         h3Equals.textContent =
-          Number(textX.textContent) / Number(textY.textContent);
+          Number(textX.textContent.replace(/,/g, "")) /
+          Number(textY.textContent.replace(/,/g, ""));
         break;
       case "=":
         textX.textContent = "";
-        h3Equals.textContent = Number(textY.textContent);
+        h3Equals.textContent = Number(textY.textContent.replace(/,/g, ""));
         break;
       default:
-        h3Equals.textContent = Number(textY.textContent);
+        h3Equals.textContent = Number(textY.textContent.replace(/,/g, ""));
         break;
     }
+    h3Equals.textContent = Number(
+      h3Equals.textContent.replace(/,/g, "")
+    ).toLocaleString();
     li.append(h3Equals);
     console.log(log.childNodes[0].childNodes);
   }
