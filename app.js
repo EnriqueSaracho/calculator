@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let operator = "";
   const log = document.getElementById("log");
   let xflag = false;
+  const refresh = document.getElementById("refresh");
+  const redo = document.getElementById("redo");
 
   // Buttons: Clear and Delete.
   clear.addEventListener("click", () => {
@@ -168,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function xValue() {
     x = Number(input.textContent.replace(/,/g, ""));
     input.textContent = "";
-    console.log(x);
+    // console.log(x);
   }
   // Function: declares "y" value and runs operation.
   function yValue() {
@@ -195,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
       input.textContent.replace(/,/g, "")
     ).toLocaleString();
     operator = "";
-    console.log(y);
+    // console.log(y);
   }
   // Function: declares "x" when an operator is in use
   function xValueOperator() {
@@ -216,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
     }
     input.textContent = "";
-    console.log(x, y);
+    // console.log(x, y);
   }
 
   // Event listener: adds keyboard functionality
@@ -355,7 +357,6 @@ document.addEventListener("DOMContentLoaded", () => {
       h3Equals.textContent.replace(/,/g, "")
     ).toLocaleString();
     li.append(h3Equals);
-    console.log(log.childNodes[0].childNodes);
   }
 
   // Function: disables buttons after pressing equals button.
@@ -391,4 +392,69 @@ document.addEventListener("DOMContentLoaded", () => {
     num8.disabled = false;
     num9.disabled = false;
   }
+
+  // Refresh:
+  refresh.addEventListener("click", () => {
+    for (let i = 0; i < log.childNodes.length; i++) {
+      let xlog = Number(
+        log.childNodes[i].childNodes[0].value.replace(/,/g, "")
+      );
+      let ylog = Number(
+        log.childNodes[i].childNodes[2].value.replace(/,/g, "")
+      );
+      let elog = 0;
+
+      switch (log.childNodes[i].childNodes[1].value) {
+        case "+":
+          elog = xlog + ylog;
+          break;
+        case "-":
+          elog = xlog - ylog;
+          break;
+        case "*":
+          elog = xlog * ylog;
+          break;
+        case "x":
+          elog = xlog * ylog;
+          break;
+        case "/":
+          elog = xlog / ylog;
+          break;
+        case "÷":
+          elog = xlog / ylog;
+          break;
+      }
+      log.childNodes[i].childNodes[0].value = xlog.toLocaleString();
+      log.childNodes[i].childNodes[2].value = ylog.toLocaleString();
+      log.childNodes[i].childNodes[4].textContent = elog.toLocaleString();
+    }
+
+    // let xlog = Number(log.childNodes[0].childNodes[0].value.replace(/,/g, ""));
+    // let ylog = Number(log.childNodes[0].childNodes[2].value.replace(/,/g, ""));
+    // let elog = 0;
+
+    // switch (log.childNodes[0].childNodes[1].value) {
+    //   case "+":
+    //     elog = xlog + ylog;
+    //     break;
+    //   case "-":
+    //     elog = xlog - ylog;
+    //     break;
+    //   case "*":
+    //     elog = xlog * ylog;
+    //     break;
+    //   case "x":
+    //     elog = xlog * ylog;
+    //     break;
+    //   case "/":
+    //     elog = xlog / ylog;
+    //     break;
+    //   case "÷":
+    //     elog = xlog / ylog;
+    //     break;
+    // }
+    // log.childNodes[0].childNodes[0].value = xlog.toLocaleString();
+    // log.childNodes[0].childNodes[2].value = ylog.toLocaleString();
+    // log.childNodes[0].childNodes[4].textContent = elog.toLocaleString();
+  });
 });
