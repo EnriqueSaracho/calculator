@@ -393,7 +393,7 @@ document.addEventListener("DOMContentLoaded", () => {
     num9.disabled = false;
   }
 
-  // Refresh:
+  // Function: Refreshes the operation results of the log by clicking Refresh button.
   refresh.addEventListener("click", () => {
     for (let i = 0; i < log.childNodes.length; i++) {
       let xlog = 0;
@@ -433,6 +433,15 @@ document.addEventListener("DOMContentLoaded", () => {
       log.childNodes[i].childNodes[0].value = xlog.toLocaleString();
       log.childNodes[i].childNodes[2].value = ylog.toLocaleString();
       log.childNodes[i].childNodes[4].textContent = elog.toLocaleString();
+    }
+  });
+
+  // Function: Erases el changes made to the log by pressing Redo button.
+  redo.addEventListener("click", () => {
+    for (let i = 0; i < log.childNodes.length; i++) {
+      log.childNodes[i].childNodes[0].value = log.childNodes[i].childNodes[0].textContent
+      log.childNodes[i].childNodes[1].value = log.childNodes[i].childNodes[1].textContent
+      log.childNodes[i].childNodes[2].value = log.childNodes[i].childNodes[2].textContent
     }
   });
 });
