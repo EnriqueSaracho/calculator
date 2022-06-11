@@ -182,3 +182,12 @@ body {
 .display-no {
   display: none;
 }
+
+.log-btn-container {
+  margin: 5px;
+}
+.btn-log {
+  width: 80px;
+  height: 60px;
+  margin: 0;
+}
