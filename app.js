@@ -396,13 +396,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Refresh:
   refresh.addEventListener("click", () => {
     for (let i = 0; i < log.childNodes.length; i++) {
-      let xlog = Number(
-        log.childNodes[i].childNodes[0].value.replace(/,/g, "")
-      );
+      let xlog = 0;
+      if (i > 0) {
+        xlog = Number(
+          log.childNodes[i - 1].childNodes[4].textContent.replace(/,/g, "")
+        );
+      } else {
+        xlog = Number(log.childNodes[i].childNodes[0].value.replace(/,/g, ""));
+      }
       let ylog = Number(
         log.childNodes[i].childNodes[2].value.replace(/,/g, "")
       );
       let elog = 0;
+      // console.log(xlog);
 
       switch (log.childNodes[i].childNodes[1].value) {
         case "+":
@@ -428,33 +434,5 @@ document.addEventListener("DOMContentLoaded", () => {
       log.childNodes[i].childNodes[2].value = ylog.toLocaleString();
       log.childNodes[i].childNodes[4].textContent = elog.toLocaleString();
     }
-
-    // let xlog = Number(log.childNodes[0].childNodes[0].value.replace(/,/g, ""));
-    // let ylog = Number(log.childNodes[0].childNodes[2].value.replace(/,/g, ""));
-    // let elog = 0;
-
-    // switch (log.childNodes[0].childNodes[1].value) {
-    //   case "+":
-    //     elog = xlog + ylog;
-    //     break;
-    //   case "-":
-    //     elog = xlog - ylog;
-    //     break;
-    //   case "*":
-    //     elog = xlog * ylog;
-    //     break;
-    //   case "x":
-    //     elog = xlog * ylog;
-    //     break;
-    //   case "/":
-    //     elog = xlog / ylog;
-    //     break;
-    //   case "÷":
-    //     elog = xlog / ylog;
-    //     break;
-    // }
-    // log.childNodes[0].childNodes[0].value = xlog.toLocaleString();
-    // log.childNodes[0].childNodes[2].value = ylog.toLocaleString();
-    // log.childNodes[0].childNodes[4].textContent = elog.toLocaleString();
   });
 });
