@@ -439,9 +439,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function: Erases el changes made to the log by pressing Redo button.
   redo.addEventListener("click", () => {
     for (let i = 0; i < log.childNodes.length; i++) {
-      log.childNodes[i].childNodes[0].value = log.childNodes[i].childNodes[0].textContent
-      log.childNodes[i].childNodes[1].value = log.childNodes[i].childNodes[1].textContent
-      log.childNodes[i].childNodes[2].value = log.childNodes[i].childNodes[2].textContent
+      log.childNodes[i].childNodes[0].value =
+        log.childNodes[i].childNodes[0].textContent;
+      log.childNodes[i].childNodes[1].value =
+        log.childNodes[i].childNodes[1].textContent;
+      log.childNodes[i].childNodes[2].value =
+        log.childNodes[i].childNodes[2].textContent;
     }
   });
 });
